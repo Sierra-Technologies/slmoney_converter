@@ -10,15 +10,12 @@
 <body>
     <div class="content">
         <!--Image & Title-->
-      
         <img src="img/Logo.jpeg" alt="Data Science">
         <div class="text">Money Converter</div>
-             <form action="#">
+            <form action="#">
                <!--Old Money input place-->
-               <div class="field">
-               
- 
-                <input type="number" placeholder="Old Money" oninput="moneyConverter(this.value)" onchange="moneyConverter(this.value)">
+              <div class="field">
+                <input type="number" placeholder="Old Money" oninput="moneyConverter(this.value), commaMon(this.value)" onchange="moneyConverter(this.value), commaMon(this.value)">
                 <!-- <label>Old Money</label> -->
               </div>
               <!--converter-->
@@ -26,14 +23,16 @@
               <!--New Money input place-->
               <div class="field">
                 <i class="fa fa-money" aria-hidden="true"></i>
-                <input  type="number" placeholder="New Money" oninput="moneyConverter2(this.value)" onchange="moneyConverter2(this.value)">
+                <input id="num" type="number" placeholder="New Money" oninput="moneyConverter2(this.value.toLocaleString('en-US'))" onchange="moneyConverter2(this.value)">
                 <!-- <label>New Money</label> -->
               </div>
               <!--converter-->
-              <button><p>Old Money: Le <span id="oldmoney"></span></p></button>
-
+              <button><p id="oldd">Old Money: Le <span id="oldmoney"></span></p></button>
+              <!-- <button id="con">Convert</button> -->
+              <!-- <h2>Output</h2> -->
              </form>
          </div>
          <script src="js/main.js"></script>
+         <script src="js/numberToWords.js"></script>
 </body>
 </html>
